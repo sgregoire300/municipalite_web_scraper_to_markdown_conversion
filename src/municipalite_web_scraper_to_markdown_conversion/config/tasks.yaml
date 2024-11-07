@@ -1,0 +1,17 @@
+---
+scrape_website_task:
+  description: Use the ScrapeWebsiteTool to extract text content from the municipality
+    website at {https://www.pointe-des-cascades.com/}.
+  expected_output: A comprehensive collection of text content extracted from the municipality
+    website.
+  async_execution: false
+  agent: website_scraper
+convert_to_markdown_task:
+  description: Convert the extracted text content from the municipality website into
+    a Markdown (.md) file using appropriate tools.
+  expected_output: A well-structured Markdown file containing the text extracted from
+    the municipality website.
+  async_execution: false
+  agent: markdown_converter
+  context:
+  - scrape_website_task
